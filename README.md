@@ -2,6 +2,14 @@
 - [NET_PRACTICE](#net_practice)
 - [COMPUTER NETWORK](#computer-network)
 	- [Key components of a computer network](#key-componets-of-a-computer-network)
+- [BASIC CHARACTERISTICS](#basic-characteristics)
+- [NETWORK PROTOCOLS & COMUNICATIONS](@network-protocols-&-cominications)
+	- [What is Data Comunication?](#What-is-Data-Comunication?)
+	- [Understand data flow](#Undersand-data-flow)
+	- [Understand the importance of protocols in computer network](#Understand-the-importance-of-protocols-in-computer-network)
+	- [know the elements of protocol](#know-the-elements-of-protocol)
+- [](#)
+
 
 ***
 # Sources
@@ -29,3 +37,31 @@ A computer network is a system of interconnected **nodes** (devices such as comp
 - **Communication links**: The physical or wireless connections (e.g., cables, radio waves) that allow data to be transmitted between nodes.
 - **Switches and routers**: Devices that manage data traffic and direct it between different parts of the network.
 - **Protocols**: Standardized rules (like TCP/IP) that dictate how data is transmitted and received.
+
+# BASIC CHARACTERISTICS
+Here’s a breakdown of the basic characteristics of a computer network
+
+- **Fault Tolerance**: Fault tolerance is the ability of a network to continue 
+  operating smoothly, even when one or more components fail.
+  - Networks achieve this by having redundant systems, meaning there are backups 
+    or alternative pathways for data to flow if one part of the network fails.
+
+- **Scalability**: Scalability refers to the network's ability to grow and manage 
+  increased demand without sacrificing performance.
+  (An example of scalable network is Internet)
+
+- **Quality of Service (QoS)**: QoS is the ability to prioritize certain types 
+  of network traffic to ensure performance for critical applications.
+  - In a network, different types of data (like voice, video, and regular file transfers) 
+    compete for bandwidth. QoS ensures that time-sensitive data (e.g., voice or video calls) 
+	gets priority over less critical traffic (e.g., file downloads).
+	This can be achieved by traffic shaping, bandwidth reservation, and traffic prioritization.
+
+- **Security**: Security refers to the measures taken to protect the network 
+  from unauthorized access, attacks, and data breaches.
+
+
+# NETWORK PROTOCOLS & COMUNICATIONS
+## What is Data Comunication?
+- **Definition**: Data communication is the exchange of data between nodes (such as computers, servers, smartphones, etc.) 
+over a transmission medium (or link).
