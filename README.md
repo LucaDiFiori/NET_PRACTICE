@@ -8,6 +8,11 @@
 	- [Understand data flow](#Undersand-data-flow)
 	- [Protocols in computer network](#protocols-in-computer-network)
 		- [Elements of protocol](#know-the-elements-of-protocol)
+	- [Peer to Peer Network](#Peer-to-Peer-Network)
+	- [Client Server Network](#Client-Server-Network)
+- [CLASSIFICATION OF COMPUTER NETWORKS](#classification-of-computer-networks)
+- [](#)
+- [](#)
 - [](#)
 
 
@@ -115,3 +120,66 @@ Protocols used in network communications define:
 	- **Unicast**: Data is sent from one sender to one specific receiver. This is the most common form of communication, such as sending an email or visiting a website.
 	- **Multicast**: Data is sent from one sender to multiple specific receivers. An example is streaming media to multiple users in a private group.
 	- **Broadcast**: Data is sent from one sender to all devices on a network. This is often used in local networks to send data like ARP (Address Resolution Protocol) requests.
+
+## Peer to Peer Network
+A Peer-to-Peer (P2P) network is a type of computer network where each device (or node) 
+has equal responsibilities and capabilities, allowing them to communicate directly 
+with one another without relying on a central server. In P2P networks, devices act 
+as both clients and servers, meaning they can both request and provide resources, 
+such as files, data, or services.
+- No centralized administration
+- All peers are equal
+- Simple sharing applications
+- Not scalable
+
+## Client Server Network
+A Client-Server Network is a network architecture in which there is a clear distinction 
+between devices (or nodes) called clients and a central device called the server. 
+In this model, clients request services, resources, or data, and the server provides them. 
+The client-server model is widely used in many applications, such as websites, 
+email systems, and databases.
+
+**Key Characteristics**
+- **Centralized Control**: In a client-server network, one or more servers act as centralized points for managing resources, such as files, databases, applications, or services.
+- **Request-Response Model**: Clients send requests to the server for services, such as accessing a web page, querying a database, or sending an email.
+  The server processes these requests and responds with the necessary information or action. For example, if a client requests a file, the server will send it back to the client.
+- **Roles and Responsibilities**:
+	- **Server**: The server is a powerful computer or group of computers that handle requests from clients. It provides services such as file storage, email handling, or web hosting. Servers usually run specialized software designed to manage network resources efficiently.
+	- **Client**: The client is any device (e.g., a PC, smartphone, or tablet) that connects to the server to access resources or perform tasks. Clients rely on the server to process requests and provide the required services or data.
+- **Efficiency and Resource Sharing**: Servers consolidate resources such as databases, applications, files, and printers, allowing multiple clients to access and share these resources efficiently.
+- **Scalability**: The architecture is scalable because more clients can connect 
+  to the server as needed. Servers can also be upgraded (e.g., adding more storage, memory, 
+  or processing power) to handle growing demand.
+
+# CLASSIFICATION OF COMPUTER NETWORKS
+Computer networks can be classified based on their geographic coverage, size, 
+and the purpose they serve. The most common classifications are LAN (Local Area Network), 
+MAN (Metropolitan Area Network), and WAN (Wide Area Network). 
+Each type has distinct characteristics in terms of size, speed, and technology used.
+
+- **LAN (Local Area Network)**
+	- **Definition**: A Local Area Network is a network that covers a small geographic area, such as a single building, office, or home. It is typically used to connect computers and devices within close proximity for sharing resources like files, printers, and internet connections.
+	- **Characteristics**
+		- **Geographic Area**: Limited to a small area (e.g., a room, a building, or a campus).
+		- **Ownership**: Usually owned and managed by a single organization or individual.
+		- **Speed**: High-speed networks (ranging from 100 Mbps to 10 Gbps or more).
+		- **Technology**: Common technologies include Ethernet (wired LAN) and Wi-Fi (wireless LAN).
+		- **example**: 
+			- Wired LAN: Ethernet - Hub,Switches
+			- Wireless LAN: Wi-Fi
+
+- **MAN (Metropolitan Area Network)**
+	- **Definition**: A Metropolitan Area Network is a network that covers a larger geographic area than a LAN, typically the size of a city or a metropolitan region. It interconnects multiple LANs within a city or town, allowing for resource sharing across larger distances.
+	- **Characteristics**
+		- **Geographic Area**: Covers an area of a few kilometers to tens of kilometers, typically within a city or a large town.
+		- **Ownership**:  Can be owned by a single organization or shared by multiple organizations, often managed by ISPs (Internet Service Providers) or telecom companies.
+		- **Speed**: Slower than a LAN but typically faster than a WAN, often using fiber-optic or high-speed wireless links.
+		- **Technology**: Technologies like Ethernet, Fiber Distributed Data Interface (FDDI), or wireless broadband.
+
+- **WAN (Wide Area Network)**
+	- **Definition**
+	- **Characteristics**
+		- **Geographic Area**
+		- **Ownership**
+		- **Speed**
+		- **Technology**
