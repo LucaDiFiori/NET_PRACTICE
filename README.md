@@ -161,25 +161,21 @@ Each type has distinct characteristics in terms of size, speed, and technology u
 	- **Definition**: A Local Area Network is a network that covers a small geographic area, such as a single building, office, or home. It is typically used to connect computers and devices within close proximity for sharing resources like files, printers, and internet connections.
 	- **Characteristics**
 		- **Geographic Area**: Limited to a small area (e.g., a room, a building, or a campus).
-		- **Ownership**: Usually owned and managed by a single organization or individual.
 		- **Speed**: High-speed networks (ranging from 100 Mbps to 10 Gbps or more).
 		- **Technology**: Common technologies include Ethernet (wired LAN) and Wi-Fi (wireless LAN).
-		- **example**: 
-			- Wired LAN: Ethernet - Hub,Switches
-			- Wireless LAN: Wi-Fi
 
 - **MAN (Metropolitan Area Network)**
 	- **Definition**: A Metropolitan Area Network is a network that covers a larger geographic area than a LAN, typically the size of a city or a metropolitan region. It interconnects multiple LANs within a city or town, allowing for resource sharing across larger distances.
 	- **Characteristics**
 		- **Geographic Area**: Covers an area of a few kilometers to tens of kilometers, typically within a city or a large town.
-		- **Ownership**:  Can be owned by a single organization or shared by multiple organizations, often managed by ISPs (Internet Service Providers) or telecom companies.
 		- **Speed**: Slower than a LAN but typically faster than a WAN, often using fiber-optic or high-speed wireless links.
 		- **Technology**: Technologies like Ethernet, Fiber Distributed Data Interface (FDDI), or wireless broadband.
+		- **Example**: A network that connects multiple offices of a company across a city.
 
 - **WAN (Wide Area Network)**
-	- **Definition**
+	- **Definition**: A Wide Area Network covers a much larger geographic area than both LANs and MANs. WANs are used to connect multiple LANs or MANs over cities, countries, or even continents. The most well-known example of a WAN is the Internet.
 	- **Characteristics**
-		- **Geographic Area**
-		- **Ownership**
-		- **Speed**
-		- **Technology**
+		- **Geographic Area**: Covers very large distances, potentially spanning entire countries or continents.
+		- **Speed**: Generally slower than LANs
+		- **Technology**: WANs use technologies such as leased lines, satellite links, MPLS (Multiprotocol Label Switching), and fiber-optic communication.
+		- **Example**: The Internet is the largest WAN, connecting billions of devices globally.
