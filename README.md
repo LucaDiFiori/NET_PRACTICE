@@ -6,8 +6,8 @@
 - [NETWORK PROTOCOLS & COMUNICATIONS](@network-protocols-&-cominications)
 	- [What is Data Comunication?](#What-is-Data-Comunication?)
 	- [Understand data flow](#Undersand-data-flow)
-	- [Understand the importance of protocols in computer network](#Understand-the-importance-of-protocols-in-computer-network)
-	- [know the elements of protocol](#know-the-elements-of-protocol)
+	- [Protocols in computer network](#protocols-in-computer-network)
+		- [Elements of protocol](#know-the-elements-of-protocol)
 - [](#)
 
 
@@ -63,5 +63,55 @@ Here’s a breakdown of the basic characteristics of a computer network
 
 # NETWORK PROTOCOLS & COMUNICATIONS
 ## What is Data Comunication?
-- **Definition**: Data communication is the exchange of data between nodes (such as computers, servers, smartphones, etc.) 
+Data communication is the exchange of data between nodes (such as computers, servers, smartphones, etc.) 
 over a transmission medium (or link).
+
+## Understand data flow
+Data flow describes the direction in which data is transmitted between devices. T
+here are three types:
+- **Simplex**: Data flows in only one direction. For example, in a keyboard-to-computer 
+  connection, the keyboard sends data to the computer, but the computer doesn’t send data back.
+- **Half-Duplex**: Data can flow in both directions, but only one direction at a time. 
+  Walkie-talkies are a good example of this.
+- **Full-Duplex**: Data flows in both directions at the same time. A common example 
+  is a telephone conversation where both people can speak and listen simultaneously.
+
+## Protocols in computer network
+- **Definition**: Protocols are a set of rules that govern how data is transmitted and received over a network. 
+  These rules ensure that devices can communicate with each other reliably and consistently.
+- **Why they are important**:
+	- **Interoperability**: Protocols ensure that devices from different manufacturers or platforms can communicate. For example, TCP/IP is the protocol used for communication over the internet, allowing millions of different devices to connect.
+	- **Error Handling**: Protocols provide methods for detecting and correcting errors during transmission, ensuring that data is received accurately.
+	- **Flow Control**: They regulate how fast data can be sent and received, preventing a fast sender from overwhelming a slower receiver.
+	- **Security**: Many protocols include encryption and authentication mechanisms to secure data as it moves across a network.
+- **Example protocols**:
+	- **HTTP**: Used for transmitting web pages.
+	- **TCP/IP**: The fundamental protocol suite for internet communication.
+	- **FTP**: Used for transferring files between a client and server.
+	- **SMTP**: Used for sending emails.
+
+### Elements of protocol
+Protocols used in network communications define:
+- **Message Encoding**: Message encoding is the process of converting data into a format that can be transmitted over a network.
+  (Protocols like ASCII or Unicode are used for encoding text, while audio and video have their own encoding standards (e.g., MP3, MPEG).)
+- **Message Formatting & Encapsulation**:
+	- **Message Formatting**: Refers to the specific structure that a message must follow 
+	  to be properly understood by the receiving system. It involves organizing the 
+	  data into sections such as headers, footers, and payloads.
+	  For instance, an email protocol like SMTP has a header (sender, receiver, subject) and a body (message content).
+	- **Encapsulation**: This refers to wrapping data with protocol-specific information as 
+	  it moves through different layers of the network (according to the OSI model).
+	  For example, when sending data over the internet, a message is encapsulated 
+	  with IP headers, then TCP/UDP headers, and finally, the application-specific headers (like HTTP).
+	  At each step, new information is added to help the message reach its destination and be understood properly.
+- **Message Timing**: Message timing refers to when and how fast data is sent between devices.
+	- **Flow Control**: Ensures that data is sent at a rate that the receiver can handle, preventing data loss or overload.
+	- **Response Time**: iming protocols define how quickly a receiver must acknowledge receipt of a message, preventing unnecessary delays.
+	- **Synchronization**: iming protocols define how quickly a receiver must acknowledge receipt of a message, preventing unnecessary delays.
+- **Message Size**: Message size refers to how large a data packet can be when sent across the network.
+  Different networks have limits on how much data can be transmitted at once. For example, 
+  Ethernet networks often use a maximum transmission unit (MTU) size of around 1500 bytes.
+- **Message Delivery Options**: This refers to how data is delivered to the recipient. There are three primary options:
+	- **Unicast**: Data is sent from one sender to one specific receiver. This is the most common form of communication, such as sending an email or visiting a website.
+	- **Multicast**: Data is sent from one sender to multiple specific receivers. An example is streaming media to multiple users in a private group.
+	- **Broadcast**: Data is sent from one sender to all devices on a network. This is often used in local networks to send data like ARP (Address Resolution Protocol) requests.
