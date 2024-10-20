@@ -1,17 +1,11 @@
 # Table of Contents
 - [NET_PRACTICE](#net_practice)
 - [COMPUTER NETWORK](#computer-network)
-	- [Key components of a computer network](#key-componets-of-a-computer-network)
 - [BASIC CHARACTERISTICS](#basic-characteristics)
 - [NETWORK PROTOCOLS & COMUNICATIONS](@network-protocols-&-cominications)
-	- [What is Data Comunication?](#What-is-Data-Comunication?)
-	- [Understand data flow](#Undersand-data-flow)
-	- [Protocols in computer network](#protocols-in-computer-network)
-		- [Elements of protocol](#know-the-elements-of-protocol)
-	- [Peer to Peer Network](#Peer-to-Peer-Network)
-	- [Client Server Network](#Client-Server-Network)
 - [CLASSIFICATION OF COMPUTER NETWORKS](#classification-of-computer-networks)
-- [](#)
+- [BASICS OF IP ADDRESSING](#basics-of-ip-addressing)
+- [BASICS OF MAC ADDRESSING](#basics-of-mac-addressing)
 - [](#)
 - [](#)
 
@@ -179,3 +173,73 @@ Each type has distinct characteristics in terms of size, speed, and technology u
 		- **Speed**: Generally slower than LANs
 		- **Technology**: WANs use technologies such as leased lines, satellite links, MPLS (Multiprotocol Label Switching), and fiber-optic communication.
 		- **Example**: The Internet is the largest WAN, connecting billions of devices globally.
+
+***
+***
+
+# BASICS OF IP ADDRESSING
+An IP address (Internet Protocol address) is a unique identifier assigned to 
+devices (nodes) connected to a network that uses the Internet Protocol for communication. 
+It serves two main functions:
+
+- **Host or Network Identification**: It uniquely identifies a device on a network, such as a computer, 
+  smartphone, or server.
+- **Location Addressing**: It provides the device's location in the network, enabling data to 
+  be routed to and from it.
+
+There are two versions of IP addresses:
+- **IPv4 (Internet Protocol version 4)**: Uses a **32-bit** address format, typically represented 
+  as four **decimal** numbers separated by periods (e.g., 192.168.0.1).
+- **IPv6 (Internet Protocol version 6)**: Uses a 128-bit address format, written as eight 
+  groups of four hexadecimal digits separated by colons 
+  (e.g., 2001:0db8:85a3:0000:0000:8a2e:0370:7334).
+
+## IP Address (IPV4) Key characteristics
+- **Logical address**: IP addresses are considered logical addresses because they 
+  don't directly correspond to the physical hardware of a device, but rather 
+  provide an abstract way to identify and communicate with devices on a network.
+  An IP address can be assigned, changed, or reassigned without modifying the physical device. 
+  It's a software-level abstraction.
+
+  For example, imagine we have a local network in New Delhi and another in Italy. 
+  By changing the IP address of one of the devices in New Delhi, we can make it
+  part of the network in Italy. This shows how IP addresses are flexible and can 
+  be reconfigured to allow a device to join a different network, without any 
+  changes to the physical hardware.
+- **Can change based on the locazion of the device** 
+- **The IP is assigned either manually or dynamically**
+- **IPV4 addresses are rappresented in decimal and it has 4 octets (x.x.x.x)**
+- **"Each value can range from 0 to 255. So all the possible IP addresses go from 0.0.0.0 to 255.255.255.255.**
+
+# BASICS OF MAC ADDRESSING
+MAC addressing (Media Access Control addressing) refers to the unique identifier 
+assigned to a network interface controller (NIC) for use in communications within a network segment.
+Is typically a **48-bit** number. It is represented as 12 hexadecimal digits, often displayed in six pairs separated by colons or hyphens 
+A MAC address **is a hardware address that identifies a specific device** on a local network.
+- Every node in the LAN is identified with the hel of MAC address.
+Using an analogy:
+- IP Address = Location of a person.
+- MAC Address = Name of the person 
+
+## Key characteristics
+- **Unique Identifier**: A MAC address is typically assigned by the manufacturer of the NIC and is designed to be globally unique, ensuring that no two devices have the same MAC address.
+- **Format**: It is usually represented as **12 hexadecimal digits**, grouped in pairs separated by colons or hyphens (e.g., 00:1A:2B:3C:4D:5E or 00-1A-2B-3C-4D-5E).
+- **Layer 2 Address**: MAC addresses operate at the Data Link Layer (Layer 2) of the OSI model. They are used for communication within a local area network (LAN), where devices use MAC addresses to send data to one another on the same network segment.
+- **Static Address (Hardware Address)**: Unlike IP addresses, which are logical and can be changed, MAC addresses are generally static and hardcoded into the device's hardware. However, some devices and network interfaces allow MAC addresses to be changed in software, a process known as MAC address spoofing.
+
+## Role in Networking
+- MAC addresses are used to direct packets to specific devices within a local network. When a device sends data, it includes both the source and destination MAC addresses to ensure the packet reaches the correct device.
+- On a larger scale (e.g., across different networks), MAC addresses are not used directly for routing, as that is the role of IP addresses at the Network Layer (Layer 3).
+- Note: **Routers** need IP addresses (for routing data between networks), while **switches** need MAC addresses (to direct data within a local network).
+
+## IP Address Vs MAC Address
+| Feature                | MAC Address                           | IP Address                           |
+|------------------------|---------------------------------------|--------------------------------------|
+| **Definition**         | Unique identifier for a network interface | Logical address for a device on a network |
+| **Length**             | 48 bits (6 bytes)                    | 32 bits (IPv4) or 128 bits (IPv6)   |
+| **Format**             | 12 hexadecimal digits (e.g., `00:1A:2B:3C:4D:5E`) | 4 decimal numbers for IPv4 (e.g., `192.168.0.1`) or 8 hexadecimal groups for IPv6 (e.g., `2001:0db8:85a3:0000:0000:8a2e:0370:7334`) |
+| **Assigned by**        | Manufacturer of the network interface card (NIC) | Network administrator or dynamically assigned by DHCP |
+| **Scope**              | Local network (Data Link Layer)      | Network-wide (Network Layer)         |
+| **Static/Dynamic**     | Generally static (hardcoded)         | Can be dynamic or static              |
+| **Purpose**            | Identifies a specific device on a local network | Routes data between devices across networks |
+| **Changeability**      | Can be changed through software (MAC spoofing) | Can be changed by reconfiguring the network settings |
