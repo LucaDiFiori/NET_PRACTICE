@@ -6,6 +6,9 @@
 - [CLASSIFICATION OF COMPUTER NETWORKS](#classification-of-computer-networks)
 - [BASICS OF IP ADDRESSING](#basics-of-ip-addressing)
 - [BASICS OF MAC ADDRESSING](#basics-of-mac-addressing)
+- [BASICS OF PORT ADDRESSING (PORT NUMBERS)](#basics-of-port-addressing-(port-numbers))
+- [SWITCHING IN COMPUTER NETWORKS](#switching-in-computer-networks)
+- [LAYERING IN COMPUTER NETWORKS](#layering-in-computer-networks)
 - [](#)
 - [](#)
 
@@ -179,7 +182,7 @@ Each type has distinct characteristics in terms of size, speed, and technology u
 
 # BASICS OF IP ADDRESSING
 An IP address (Internet Protocol address) is a unique identifier assigned to 
-devices (nodes) connected to a network that uses the Internet Protocol for communication. 
+devices (nodes) connected to a network that uses the Internet Protocol for communication.
 It serves two main functions:
 
 - **Host or Network Identification**: It uniquely identifies a device on a network, such as a computer, 
@@ -223,9 +226,9 @@ Using an analogy:
 
 ## Key characteristics
 - **Unique Identifier**: A MAC address is typically assigned by the manufacturer of the NIC and is designed to be globally unique, ensuring that no two devices have the same MAC address.
+- **Static Address (Hardware Address)**: Unlike IP addresses, which are logical and can be changed, MAC addresses are generally static and hardcoded into the device's hardware. However, some devices and network interfaces allow MAC addresses to be changed in software, a process known as MAC address spoofing.
 - **Format**: It is usually represented as **12 hexadecimal digits**, grouped in pairs separated by colons or hyphens (e.g., 00:1A:2B:3C:4D:5E or 00-1A-2B-3C-4D-5E).
 - **Layer 2 Address**: MAC addresses operate at the Data Link Layer (Layer 2) of the OSI model. They are used for communication within a local area network (LAN), where devices use MAC addresses to send data to one another on the same network segment.
-- **Static Address (Hardware Address)**: Unlike IP addresses, which are logical and can be changed, MAC addresses are generally static and hardcoded into the device's hardware. However, some devices and network interfaces allow MAC addresses to be changed in software, a process known as MAC address spoofing.
 
 ## Role in Networking
 - MAC addresses are used to direct packets to specific devices within a local network. When a device sends data, it includes both the source and destination MAC addresses to ensure the packet reaches the correct device.
@@ -243,3 +246,223 @@ Using an analogy:
 | **Static/Dynamic**     | Generally static (hardcoded)         | Can be dynamic or static              |
 | **Purpose**            | Identifies a specific device on a local network | Routes data between devices across networks |
 | **Changeability**      | Can be changed through software (MAC spoofing) | Can be changed by reconfiguring the network settings |
+
+
+# BASICS OF PORT ADDRESSING (PORT NUMBERS)
+Imagine a friend wants to send you a package:
+- **Reaching Our City (IP Address)**: Your friend first needs to determine the city where you live. This is like finding your network using your IP address. Just as a package must reach the correct city to be delivered, data must reach the right network.
+- **Reaching Our Apartment (MAC Address)**: Once the package arrives in your city, it needs to get to your specific apartment. This is similar to how data packets use the MAC address to identify the host device on the local network. Just as the apartment number ensures the package is delivered to your home, the MAC address ensures data reaches the correct device.
+- **Reaching the Right Person (Port Address)**: Finally, when the package is at your apartment, it needs to be delivered to you personally. This is akin to using a port address to identify the specific application or process on your device that should receive the data. Just like your friend needs to ensure the package is given to you and not someone else in your apartment, data needs to reach the right process on your device.
+
+## Definition
+Port addressing is an essential concept in computer networking that allows multiple 
+network services to operate simultaneously on a single IP address. 
+Each service running on a device is identified by a port number, which **specifies the particular process or service that should handle incoming or outgoing data**.
+- In a node, many processes will be running
+- Data which are sent/received must reach the right process
+- Every process in a node is uniquely identified using port NUMBERS
+- Port = Comunication endpoint
+- We have two categories of port numbers ranging from 0 to 65535:
+	- Fixed (Well-Known) Port Numbers (e.g., 25, 80)
+	- Dynamic Port Numbers: For example, when you open a browser, the operating 
+	system assigns a port to the process, such as 62414.
+
+## Understanding the Basics of Port Addressing
+- **Port Number**: A port number is a 16-bit integer ranging from 0 to 65535. It helps distinguish different services or applications on a device.
+- **Transport Layer Protocols**: Port numbers are primarily used with transport 
+  layer protocols such as TCP (Transmission Control Protocol) and UDP (User Datagram Protocol).
+- **Well-Known (Fixed) Ports**: Ranging from 0 to 1023, these ports are reserved for widely used protocols and services. Only privileged processes (typically those run by the system) can bind to these ports.
+  The Internet Assigned Numbers Authority (IANA) has designated certain port numbers for specific services:
+	- Port 80: HTTP (web traffic)
+	- Port 443: HTTPS (secure web traffic)
+	- Port 25: SMTP (email sending)
+	- Port 53: DNS (domain name system)
+- **Registered Ports**: Ranging from 1024 to 49151, these ports are used for 
+	  user applications that are not as widely recognized as those using well-known ports.
+
+## Three Key Points to Ponder
+Before sending the data, any node must:
+- Attach source IP address and destination IP address (Required for the Routers)
+- Attach source MAC address and destination MAC address (Required for the switches)
+- Attach source port number and destination port number (Required for the Operating system to hand over the right data to the right process)
+
+
+# SWITCHING IN COMPUTER NETWORKS
+Switching in computer networks is a method used to forward data from one device to another through intermediate nodes or devices.
+It helps in deciding the best route for data transmission if there are 
+multiple path in a larger network.
+
+Switching involves deciding how data should be routed through the network based on various criteria, like the destination address, current network conditions, or transmission requirements.
+
+# Switching techniques
+The three main types of switching techniques are 
+- **circuit switching** 
+- **message switching**
+- **packet switching**
+
+**Packet switching** can be categorized into two approaches:
+- Datagram Approach
+- Virtual Circuit Approach
+
+Each one has unique characteristics in how data is transmitted across a network.
+
+## Circuit Switching
+-**Definition**: Circuit switching is a method where a **dedicated communication path** or circuit is established between two devices for the duration of a communication session.
+
+- **How it works** When data needs to be transmitted, **a** complete end-to-end **connection is established first**. The entire bandwidth of this dedicated path is reserved for the communication until the session ends.
+
+- **Examle**: Traditional telephone networks use circuit switching.
+
+- **Phases in circuit switching**
+    - 1. Connection establishment
+    - 2. Data transfer
+    - 3. Connection Disconnection
+
+
+
+## Message Switching
+-**Definition**: In message switching, data is sent in the form of complete messages (Store and forward mechanism) from the source to the destination, but no dedicated path is required.
+
+- **How it works**: A message is transmitted from one switch (or node) to the next in separate segments. Each node stores the entire message before forwarding it, a process known as store-and-forward. If the next node is busy or unavailable, the message is temporarily held at the intermediate node until it can be forwarded.
+
+- **Examle**: Early postal services and telegraph systems were similar to message switching.
+
+
+## Packet Switching:
+-**Definition**: Packet switching divides data into small, manageable chunks called packets that are transmitted independently across the network.
+
+- **How it works**: Each packet is routed individually, possibly taking different paths to reach the destination. Each packet will have source and destination IP address with sequence number. Once all packets arrive, they are reassembled into the original message.
+
+- **Examle**: The Internet uses packet switching.
+
+### two approaches in packet switching
+In packet switching, data is divided into small units called packets for transmission across a network. There are two main approaches for handling these packets: the datagram approach and the virtual circuit approach. Both of these techniques manage how packets are routed through the network but differ significantly in their implementation and characteristics.
+#### Datagram Approach
+The datagram approach treats each packet independently, with no predefined path established between the sender and receiver.
+- Datagram Packet Switching is also known as connectionaless switching
+- Each independent entity is colled as datagram
+- Datagrams contain destination information and the intermediary devices uses this information to forward datagrams to right destination
+- Every packet is treated as a separate entity. Routers forward packets based on the information contained in each one.
+- Intermediate nodes take the routin decisions to forward the packets
+- Dynamic Routing: As the network conditions (such as traffic congestion) change, packets can take different paths, leading to more flexibility in routing (The path is not fixed)
+
+#### Virtual Circuit Approach
+In the virtual circuit approach, a logical path is established between the sender and receiver before any packets are sent. All packets follow this predetermined path, resembling a connection-oriented system, but without the need for a physical dedicated circuit.
+- Virtual Circuit switching is also known as connextion-oriented switching
+- In the case of virtual circuit switching, a preplanned route is enstablished befor the message are sent. 
+Before sending data, a virtual circuit is established, which defines the path all packets will take. This setup phase involves assigning a virtual circuit identifier (VCI) at each hop along the path.
+- Call request and call accept packets are used to enstablish the connection between sender and receiver
+- nce the path is established, packets travel the same route and can be delivered in order.
+- In this approach the path is fixed for the duration of a logical 
+- After the communication ends, the virtual circuit is torn down, freeing up network resources.
+
+
+# LAYERING IN COMPUTER NETWORKS
+layering is a design principle that **divides the complex process of data communication into manageable layers**. Each layer performs specific functions and interacts with the layers directly above and below it. This approach simplifies network design, troubleshooting, and development by allowing layers to be developed independently.
+The most widely used model that illustrates layering is the OSI (Open Systems Interconnection) model, but the TCP/IP model is also commonly referenced in practice.
+
+# Role of protocols in layering
+- In computer networking, protocols are essential rules or standards that dictate how data is transmitted and received across a network. They define how devices communicate at various layers of the network. Protocols enable different layers in a layered model (such as the OSI or TCP/IP model) to perform their specific functions and ensure interoperability between systems and devices.
+- The protocol in each layer governs the activities of the data communication
+
+# THE OSI MODEL
+- OSI stands for Open System Interconnection
+- It is a model for understanding and designing a network architecture that is flexible, robust. and interoperable.
+- The OSI model is non a protocol, it is only a guideline and hence it is referred as OSI reference model
+- The purpose of th OSI model is to show how to facilitate communication between different systems without requiring changes to the logic of the underlying hardare and sofware
+- The OSI model was never fully implemented
+
+The OSI model has seven layers, each with distinct responsibilities. Here’s a breakdown of these layers, starting from the bottom (Layer 1) to the top (Layer 7):
+
+1. **Physical Layer (Layer 1)**:
+    - **Purpose**: The physical layer deals with the transmission of raw data (bits) over a physical medium like cables, radio waves, or fiber optics.
+    - **Functions**:
+        - Defines the electrical/optical specifications for devices.
+        - Manages how data is physically transmitted (e.g., voltage levels, signal timing).
+        - Examples: Ethernet cables, hubs, Wi-Fi standards.
+
+2. **Data Link Layer (Layer 2):**:
+    - **Purpose**: This layer is responsible for node-to-node data transfer and error detection/correction over the physical medium.
+    - **Functions**:
+        - Packages raw bits into frames for transmission.
+        - Adds a **MAC address** (unique hardware address) to ensure data is delivered to the correct device on the same network.
+        - Manages error detection (using checksums or CRC).
+        - Examples: Ethernet, Wi-Fi (802.11), switches.
+
+3. **Network Layer (Layer 3)**:
+    - **Purpose**: The network layer handles **routing** data between devices on different networks.
+    - **Functions**:
+        - Breaks data into packets.
+        - Adds **IP addresses** for devices and routes packets across different networks.
+        - Decides the best path (route) for data to reach its destination.
+        - Handles fragmentation and reassembly of packets.
+        - Examples: IP (Internet Protocol), routers.
+
+4. **Transport Layer (Layer 4)**:
+    - **Purpose**: The transport layer ensures reliable data transmission between devices, providing end-to-end communication.
+    - **Functions**:
+        - Breaks data into segments and ensures reliable delivery using mechanisms like TCP (Transmission Control Protocol).
+        - Provides error recovery and flow control to prevent network congestion
+        - Supports connection-oriented (TCP) or connectionless (UDP) communication.
+
+5. **Session Layer (Layer 5)**:
+    - **Purpose**: The session layer manages sessions between applications.
+    - **Functions**:
+        - Establishes, maintains, and terminates connections (sessions) between two communicating devices.
+        - Manages synchronization of data exchange.
+        - Ensures the session stays open for the duration of communication.
+
+6. **Presentation Layer (Layer 6)**:
+    - **Purpose**: The presentation layer is responsible for data translation and **formatting**.
+    - **Functions**:
+        - Converts data into a format the application layer can understand (e.g., encryption, compression, or data encoding like ASCII or JPEG).
+        - Ensures data is presented in a usable format for the application layer.
+        - Examples: SSL/TLS, JPEG, MPEG.
+
+7. **Application Layer (Layer 7)**:
+    - **Purpose**: This layer provides services directly to end users or applications.
+    - **Functions**:
+        - Interfaces with the network at the user level.
+        - Provides protocols for email, web browsing, file transfer, etc.
+        - Handles data exchange between software applications.
+        - Examples: HTTP, FTP, SMTP, DNS.
+
+# THE TCP/IP MODEL
+- TCP/IP = Transmission Control Protocol/Internet Protocol
+- The TCP/IP protocol suite was developed prior to the OSI model
+- Therefore, the layers in the TCP/IP protocol suite do not exactly match those in the OSI model
+- TCP/IP is a hierarchical protocol made up of interactive modules, each of which provides a specific functionality
+(For any comunication to happen in computer network, we need IP address, MAC address and port address. Each layer wil take care of each of these addressing.)
+
+While the OSI model is a conceptual model, the TCP/IP model is a more practical framework used in the real world, especially for the Internet. It consists of four layers (sometimes five, depending on interpretation):
+
+1. **Link Layer**
+    - **Purpose**: The link layer is responsible for the physical connection between devices, including how data is physically transmitted over the network (such as Ethernet or Wi-Fi).
+    This layer encompasses what the Physical and Data Link layers do in the OSI model. It manages how data is physically transmitted and received, including error detection and hardware addressing.
+    - **Functions**:
+        - Framing: Divides data into frames for transmission across the physical network.
+        - Addressing: Uses hardware (**MAC**) addresses to identify devices on the same local network.
+        - Error Detection: Provides mechanisms to detect errors in frames during transmission (e.g., checksums or CRC).
+        - Medium Access Control: Controls how devices share the network medium, avoiding collisions (especially in wireless or shared networks).
+
+2. **Internet Layer**
+    - **Purpose**: The Internet layer is responsible for routing data between devices across multiple networks (e.g., from your local network to a server on the Internet). It determines the best path for data to reach its destination.
+    - **Functions**:
+        - Packet Routing: Decides how packets (small chunks of data) travel across the network, hopping from router to router until they reach their destination.
+        - Addressing: Assigns **IP addresses** to identify devices uniquely across the network.
+        - Fragmentation and Reassembly: Breaks large packets into smaller chunks that fit the network’s limits and reassembles them at the destination.
+
+3. **Transport Layer**
+    - **Purpose**: The transport layer manages **end-to-end communication** between devices. It ensures that data is transmitted reliably (or unreliably, depending on the protocol) and in the correct sequence.
+    - **Functions**:
+        - Segmentation: Divides data into smaller units (segments) for transmission and reassembles them at the destination.
+        - Error Control: Ensures that corrupted or missing data is detected and retransmitted.
+        - Flow Control: Manages the rate of data transmission to avoid overwhelming the network or the receiver.
+        - Multiplexing: Allows multiple applications on the same device to send and receive data simultaneously.
+
+4. **Application Layer**:
+    - **Purpose**: The application layer provides network services directly to user applications. It defines the protocols that applications use to communicate over the network, handling the user’s data.
+    - **Functions**:
+        - Data Presentation: Ensures that data is formatted and presented correctly for the application, such as converting it into readable formats.
+        - Application Services: Provides services like file transfer, email, and web browsing.
+        - Protocol Interaction: Enables interaction between different networked applications using protocols like HTTP, SMTP, etc.
