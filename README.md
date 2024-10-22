@@ -15,12 +15,20 @@
 
 ***
 # Sources
-- https://youtube.com/playlist?list=PLBlnK6fEyqRgneraVKkEXrwyLVx2vJUvt&si=PTG-t3fgIMkWcgTl
-- https://www.youtube.com/watch?v=bj-Yfakjllc&list=PLIFyRwBY_4bRLmKfP1KnZA6rZbRHtxmXi&ab_channel=PracticalNetworking
+## Video
+- https://www.youtube.com/playlist?list=PLBlnK6fEyqRgneraVKkEXrwyLVx2vJUvt
+- https://www.youtube.com/playlist?list=PLIFyRwBY_4bRLmKfP1KnZA6rZbRHtxmXi
+- https://www.youtube.com/playlist?list=PLIFyRwBY_4bQUE4IB5c4VPRyDoLgOdExE
+- https://www.youtube.com/watch?v=HQUw0CfQWAM
 
-- https://youtube.com/playlist?list=PLIFyRwBY_4bRLmKfP1KnZA6rZbRHtxmXi&si=v7P3lmUDC_sHd_zd
-
+## Articles
+- https://medium.com/@imyzf/netpractice-2d2b39b6cf0a
+- https://toufa7.medium.com/netpractice-guidelines-6341b8309f38
+- https://toufa7.medium.com/new-subnetting-34fadfb86c70
 - https://42-cursus.gitbook.io/guide/rank-04/netpractice/theory
+
+## Repo
+- https://github.com/lpaube/NetPractice
 
 ***
 
