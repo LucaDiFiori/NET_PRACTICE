@@ -26,6 +26,7 @@
 - https://toufa7.medium.com/netpractice-guidelines-6341b8309f38
 - https://toufa7.medium.com/new-subnetting-34fadfb86c70
 - https://42-cursus.gitbook.io/guide/rank-04/netpractice/theory
+- https://medium.com/@imyzf/netpractice-2d2b39b6cf0a (medium article)
 
 ## Repo
 - https://github.com/lpaube/NetPractice
