@@ -1,6 +1,5 @@
 # Sources
 ## Video
-- https://www.youtube.com/playlist?list=PLBlnK6fEyqRgneraVKkEXrwyLVx2vJUvt
 - https://www.youtube.com/playlist?list=PLIFyRwBY_4bRLmKfP1KnZA6rZbRHtxmXi
 - https://www.youtube.com/playlist?list=PLIFyRwBY_4bQUE4IB5c4VPRyDoLgOdExE
 - https://www.youtube.com/watch?v=HQUw0CfQWAM
