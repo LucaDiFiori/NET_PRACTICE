@@ -59,6 +59,8 @@ Let’s assume we have a network with 192.168.1.0/24 and want to divide it into 
 1. Determine the number of subnets needed:
 - 4 subnets require at least 2 additional bits to represent them (2² = 4).
 2. Adjust the subnet mask:
+- from: 255.255.255.0 = 11111111.11111111.11111111.00000000
+- to: 11111111.11111111.11111111.11000000 -> I took the 2 necessary bits starting from the left (on the network side).
 - /24 becomes /26 (255.255.255.192).
 3. Calculate the ranges:
 - Subnet 1: 192.168.1.0 - 192.168.1.63
@@ -71,9 +73,33 @@ Each subnet has:
 - 64 total addresses.
 - 62 usable addresses for hosts (excluding network and broadcast addresses).
 
+## Calculate the range od IP addresses
+To calculate the range of IP addresses and determine how many hosts you have per subnet, you need to follow a step-by-step process. Here’s how:
+
+1. **Understand the Subnet Mask**
+The subnet mask tells you how many bits are reserved for the network and how many are available for hosts:
+- In /26 (255.255.255.192):
+	- 26 bits are for the network.
+ 	- 32−26=6 bits are for the host portion.
+ 
+2. **Calculate the Total Addresses Per Subnet**
+The total number of addresses in a subnet is determined by the formula:  **2^n**
+Where n is the number of bits in the host portion. For /26, 𝑛 = 6:
+2^6 = 64 addresses per subnet.
+
+3. **Calculate the Usable Hosts Per Subnet**
+To find the usable host addresses, subtract the network address and the broadcast address from the total:
+**2^n -2**
+
+4. **Determine the Range of IP Addresses**
+Each subnet has a block size of 2^𝑛 = 64 addresses. The range is calculated as follows:
+- The first IP in the range is the network address (all host bits set to 0).
+- The last IP is the broadcast address (all host bits set to 1).
+- The usable range is from the first usable host to the last usable host.
+
 ## Useful Calculations
-- Number of subnets: **2^𝑛**, where 𝑛 is the number of bits added to the subnet mask.
-- Number of hosts per subnet: **2^𝑚 - 2** , where 𝑚 is the number of bits remaining for hosts.
+- **Number of subnets**: **2^𝑛**, where 𝑛 is the number of bits added to the subnet mask.
+- **Number of hosts per subnet**: **2^𝑚 - 2** , where 𝑚 is the number of bits remaining for hosts.
 
 
 
