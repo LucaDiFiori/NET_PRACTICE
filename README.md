@@ -22,6 +22,7 @@
 This project is a general practical exercise to let you discover networking.
 You will have to configure small-scale networks. To do so, it will be necessary to understand how TCP/IP addressing works.
 
+***
 
 # SUBNETTING
 Subnetting is a technique used to divide a larger network into smaller subnetworks (subnets). This improves the efficiency of IP address usage and allows for better network resource management.
@@ -93,15 +94,53 @@ To find the usable host addresses, subtract the network address and the broadcas
 
 4. **Determine the Range of IP Addresses**
 Each subnet has a block size of 2^𝑛 = 64 addresses. The range is calculated as follows:
-- The first IP in the range is the network address (all host bits set to 0).
-- The last IP is the broadcast address (all host bits set to 1).
-- The usable range is from the first usable host to the last usable host.
+	- The first IP in the range is the network address (all host bits set to 0).
+	- The last IP is the broadcast address (all host bits set to 1).
+	- The usable range is from the first usable host to the last usable host.
 
 ## Useful Calculations
 - **Number of subnets**: **2^𝑛**, where 𝑛 is the number of bits added to the subnet mask.
 - **Number of hosts per subnet**: **2^𝑚 - 2** , where 𝑚 is the number of bits remaining for hosts.
 
 
+***
+
+# SUBNETTING BASE ON REQUIRED HOSTS
+Sometimes, instead of determining how many networks you need, you need to calculate the subnets based on the number of hosts you want in each subnet.
+
+## Steps to Subnet Based on Hosts
+1. **Determine the Number of Hosts Required**
+	- Identify how many devices (hosts) you want to connect in each subnet. For example, let’s say you need 30 hosts.
+
+2. **Calculate the Number of Host Bits Needed**
+	- Use the formula: **2^n -2 >= Requires hosts**. n is the number of bits reserved for hosts. The subtraction of 2 accounts for the network address and broadcast address.
+	- For 30 hosts: 2^n -2 >= 30 gives me n = 5
+
+3. **Adjust the Subnet Mask**
+	- The subnet mask determines how many bits are reserved for the network and how many for hosts.
+	- from: 255.255.255.0 = 11111111.11111111.11111111.00000000
+	- to: to: 11111111.11111111.11111111.11100000 -> We "save" the 5 necessary bits on the right for the hosts, leaving them as 0 (on the host side), and convert the rest to network bits by setting them to "1".
+ 	- This gives a subnet mask of /27, equivalent to 255.255.255.224
+
+4. **Calculate the Total Addresses and Usable Hosts Per Subnet**
+- Total addresses:
+	- 2^n = 32 
+- Usable hosts:
+	- 2^n - 2 = 30
+
+5. **Determine the Range of IP Addresses**
+- Subnet size: 2^n = 32 addresses per subnet.
+- Add the subnet size to the starting IP address to calculate the next subnet.
+- Example with 192.168.1.0/27:
+	- Subnet 1:
+		- Network address: 192.168.1.0
+		- Usable range: 192.168.1.1 to 192.168.1.30
+		- Broadcast address: 192.168.1.31
+	- Subnet 2:
+		- Network address: 192.168.1.32
+		- Usable range: 192.168.1.33 to 192.168.1.62
+		- Broadcast address: 192.168.1.63
+	- Repeat for additional subnets.
 
 
 
